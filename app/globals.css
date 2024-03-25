@@ -1,0 +1,327 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --light-color: #f7f1f7;
+  --dark-color: #020202;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-color: rgb(18, 19, 42);
+  --background-color-darker: rgb(5, 13, 34);
+  --background-color-card: rgb(22, 36, 70);
+  --foreground-primary-light: rgb(255, 92, 67);
+  --foreground-primary: rgb(228, 83, 60);
+  --font-code: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  --muted-text-light: rgba(201, 201, 201, 0.692);
+  --muted-text-dark: rgba(77, 77, 77, 0.623);
+  --text-bg-gradient: linear-gradient(to bottom, #fff, rgb(194, 56, 147));
+  --translucent: rgba(255, 255, 255, 0.068);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --light-color: #202020;
+    --dark-color: #f7f1f1;
+    --muted-text-dark: rgba(201, 201, 201, 0.692);
+    --muted-text-light: rgba(77, 77, 77, 0.623);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: var(--light-color);
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: border 200ms ease-in;
+  /* color: white; */
+}
+
+.heading {
+  margin: 0;
+  padding: 0px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.heading > h1 {
+  padding: 20px;
+  margin: 0;
+}
+
+
+body {
+  min-width: 280px;
+  min-height: 100vh;
+  font-family: "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.2;
+}
+h2 {
+  font-size: 2.2em;
+  line-height: 1.1;
+}
+h3 {
+  font-size: 1.6em;
+  line-height: 1.1;
+}
+h4 {
+  font-size: 1.2em;
+  line-height: 1.1;
+}
+p {
+  font-size: smaller;
+  font-weight: 300;
+}
+
+optgroup {
+  margin-bottom: 10px !important;
+}
+
+html > option {
+  padding: 10px;
+}
+
+input[type="text"]:focus,
+input:where(:not([type])):focus,
+[type="email"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="number"]:focus,
+[type="date"]:focus,
+[type="datetime-local"]:focus,
+[type="month"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="time"]:focus,
+[type="week"]:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border: none;
+}
+
+/* img {
+  /* object-fit: cover;
+} */
+
+/* scroll-to-top button*/
+.scroll-to-top {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
+  padding: 1rem;
+  background-color: #003355;
+  z-index: 1000;
+  border: 2px solid white;
+  color: #fff;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.scroll-to-top:hover {
+  opacity: 0.8;
+}
+
+/* Set the container to snap-scrolling */
+.scroll-section {
+  scroll-snap-type: y mandatory;
+}
+
+/* Set each section to snap-align to the top of the container */
+.scroll-section__item {
+  scroll-snap-align: start;
+}
+
+/* ------------------ map ------------------*/
+.mapouter {
+  position: relative;
+  text-align: right;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  min-width: 300px;
+}
+.gmap_canvas {
+  overflow-y: hidden;
+  background: none !important;
+  width: 100%;
+  height: 100%;
+}
+.gmap_iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+/* --------------------map ends------------------- */
+/* ------------------------confetti------------------ */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  transform-origin: center bottom;
+  animation: fall 4s linear infinite;
+}
+
+.confetti.square {
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+}
+.confetti.triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+/* --------------------confetti ends---------------------- */
+
+/* -----------------Dark mode--------------------- */
+
+@media (prefers-color-scheme: dark) {
+}
+
+/* -----------------Dark mode ends--------------------- */
+
+/* ========================= components ======================== */
+@layer components {
+  .grid-card {
+    @apply rounded-sm flex justify-self-center flex-col items-center bg-[var(--translucent)] backdrop-blur-md border-b-2 border-r-2 border-[#fff3] overflow-hidden;
+  }
+  .clip-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-bl from-primary to-primary-light;
+  }
+
+  .testimonial-card {
+    @apply;
+  }
+  .backdrop-filter {
+    @apply bg-[var(--translucent)] backdrop-blur-md border-b border-[#fff2];
+  }
+  .btn {
+    @apply flex items-center justify-center px-6 md:px-8 py-3 text-sm select-none cursor-pointer;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-bl from-yellow-700 to-red-500 text-light transition-[background] md:text-sm;
+  }
+  .btn-outline {
+    @apply ring-light ring-1;
+  }
+  .card-skew {
+    @apply -skew-x-6;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-background {
+    background: linear-gradient(to bottom, transparent, var(--background-color))
+      var(--background-color-darker);
+  }
+  .ring-button {
+    transition: border 0.25s ease;
+  }
+  .link-underline {
+    position: relative;
+    overflow: hidden;
+  }
+  .shining-bg {
+    position: relative;
+  }
+  .grid-card-container {
+    display: grid;
+    grid-auto-flow: dense;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    /* grid-auto-rows: 120px auto auto; */
+  }
+  .shining-bg::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      to center,
+      var(--background-color-darker),
+      var(--background-color),
+      var(--light-color)
+    );
+  }
+
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: var(--foreground-primary);
+    width: 60%;
+    transform: translateX(-100%);
+    transition: transform 250ms ease;
+  }
+  .link-underline:hover::after,
+  .link-underline:focus::after {
+    transform: translateX(30%);
+  }
+  .link-underline:hover .link-icon {
+    display: block;
+  }
+  .backdrop-filter {
+    box-shadow: 1px 1px 10px 1px #0007;
+  }
+}
+
+/* ------------------------keyframes--------------- */
+@keyframes shake-card {
+  0%,
+  20% {
+    transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+  30%,
+  50% {
+    transform: rotateZ(-10deg);
+  }
+  40%,
+  60% {
+    transform: rotateZ(10deg);
+  }
+  70% {
+    transform: rotateZ(0deg);
+  }
+}
