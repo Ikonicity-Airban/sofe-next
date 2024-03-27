@@ -24,8 +24,8 @@
   :root {
     --light-color: #202020;
     --dark-color: #f7f1f1;
-    --muted-text-dark: rgba(201, 201, 201, 0.692);
-    --muted-text-light: rgba(77, 77, 77, 0.623);
+    --muted-text-dark: rgba(221, 221, 221, 0.908);
+    --muted-text-light: rgba(137, 135, 135, 0.623);
   }
 }
 
