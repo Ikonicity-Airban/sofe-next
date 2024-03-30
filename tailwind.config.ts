@@ -8,7 +8,7 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/flowbite/**/*.js",
   ],
-  darkMode: "class",
+  darkMode: ["class"],
   theme: {
     screens: {
       smallScreens: "320px",
