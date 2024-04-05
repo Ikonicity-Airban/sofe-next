@@ -4,7 +4,7 @@ import Section from "@/app/ui/section";
 
 export default function LoginPage() {
   return (
-    <Section>
+    <Section >
       <LoginForm />
     </Section>
   );

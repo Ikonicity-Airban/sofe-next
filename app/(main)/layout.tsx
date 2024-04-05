@@ -36,7 +36,7 @@ function Layout({ children }: { children: React.ReactNode }) {
     <main
       className={clsx(
         montserrat.style,
-        "min-h-screen gradient-background w-full relative"
+        "min-h-screen gradient-background relative"
       )}
     >
       <section className="w-full">
