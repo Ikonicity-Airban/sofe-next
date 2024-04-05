@@ -15,7 +15,6 @@ function HomePage() {
   return (
     <section className="relative w-full select-none">
       <HeroSection />
-      <Welcome />
       <Suspense fallback={<h4>Loading...</h4>}>
         <Services count={3} />
       </Suspense>
